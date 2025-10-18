@@ -1,0 +1,18 @@
+[package]
+name = "thumbnailer"
+readme = "README.md"
+license = "Apache-2.0"
+authors = ["trivernis <trivernis@protonmail.com>"]
+description = "An image thumbnail creation library"
+version = "0.5.1"
+edition = "2018"
+repository = "https://github.com/Trivernis/thumbnailer"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mime = "0.3.16"
+rayon = "1.5.1"
+tempfile = "3.3.0"
+image= "0.24.0"
+lazy_static = "1.4.0"

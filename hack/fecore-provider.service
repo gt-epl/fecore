@@ -1,0 +1,15 @@
+[Unit]
+Description=fecore-provider
+
+[Service]
+MemoryLimit=500M
+Environment="secret_mount_path={{.SecretMountPath}}"
+Environment="basic_auth=true"
+Environment="hosts_dir=/var/lib/fecore"
+ExecStart=/usr/local/bin/fecore provider
+Restart=on-failure
+RestartSec=10s
+WorkingDirectory={{.Cwd}}
+
+[Install]
+WantedBy=multi-user.target

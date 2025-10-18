@@ -1,0 +1,18 @@
+# Ignore options for fecore files
+/fecore
+hosts
+basic-auth-user
+basic-auth-password
+/bin
+/secrets
+
+# Ignore options for IDE files
+.idea/
+.vscode
+
+# Ignore options for Rust files
+debug/
+target/
+Cargo.lock
+**/*.rs.bk
+*.pdb

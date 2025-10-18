@@ -1,0 +1,13 @@
+[Unit]
+Description=fecore
+After=fecore-provider.service
+
+[Service]
+MemoryLimit=500M
+ExecStart=/usr/local/bin/fecore up
+Restart=on-failure
+RestartSec=10s
+WorkingDirectory={{.Cwd}}
+
+[Install]
+WantedBy=multi-user.target

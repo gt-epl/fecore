@@ -1,0 +1,18 @@
+#FROM --platform=linux/x86_64 ubuntu
+FROM ubuntu:18.04
+
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y iproute2 net-tools
+
+COPY libz.a /usr/local/lib
+
+RUN ldconfig /usr/local/lib
+
+COPY ./compression-n /opt
+COPY ./compression_loader /opt
+
+COPY input.file /opt
+
+WORKDIR /opt
+
+ENTRYPOINT [ "/opt/compression_loader" ]

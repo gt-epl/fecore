@@ -1,0 +1,14 @@
+FROM ubuntu:18.04
+
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y python3 python3-pip iproute2 net-tools
+
+COPY requirements.txt requirements.txt
+
+RUN pip3 install -r requirements.txt
+
+COPY encrypt.py /opt
+
+WORKDIR /opt
+
+ENTRYPOINT [ "python3", "/opt/encrypt.py" ]

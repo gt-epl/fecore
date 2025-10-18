@@ -1,0 +1,13 @@
+FROM node:18
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+COPY input.png .
+COPY thumbnailer.js .
+
+RUN npm install
+
+EXPOSE 8080
+
+CMD [ "node", "thumbnailer.js" ]

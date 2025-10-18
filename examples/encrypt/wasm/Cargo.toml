@@ -1,0 +1,21 @@
+[package]
+name = "aes-wasm"
+version = "0.1.8"
+edition = "2021"
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/jedisct1/rust-aes-wasm"
+authors = ["Frank Denis <github@pureftpd.org>"]
+description = "AES-GCM, AES-OCB, AEGIS, AES-CTR, CMAC-AES for WebAssembly"
+keywords = ["aes-gcm", "aes-ctr", "cmac", "wasm", "webassembly"]
+
+[dev-dependencies]
+benchmark-simple = "0.1.8"
+aegis = "0.6.2"
+aes-gcm = "0.10.3"
+cmac = "0.7.2"
+ctr = "0.9.2"
+
+[[bench]]
+name = "benchmark"
+harness = false
