@@ -18,9 +18,11 @@ The fastest way to evaluate RUNE is to use our pre-built Cloudlab image:
 
 Cloudlab will provision a bare metal c220g1 machine and load our pre-built Linux image that contains most dependencies needed to run RUNE.
 
-After the machine has been brought online, SSH into it and change directory to `/project/RUNE`. You should find the files needed to complete the setup in this directory. Run the `SETUP.sh` script to finish installation of remaining of dependencies and configs.
+After the machine has been brought online, SSH into it and change directory to `/project/RUNE`. You should find the files needed to complete the setup in this directory. **NOTE**: If you do not see any files in this directory, or if you are not using our Cloudlab image, you will need to manually download the [latest release of RUNE](https://github.com/gt-epl/fecore/releases/download/RUNE-ae-v1.0/RUNE-ae-v1.0.tgz) and run the `SETUP.sh` script found within.
 
-Note that you can also set up an environment manually by following instrctions in [README_fecore.md](README_fecore.md) and [SETUP.md](docs/SETUP.md). The provided `SETUP.sh` script can also be readily adapted to other Ubuntu 20.04 LTS installations.
+Run the `SETUP.sh` script to finish installation of remaining of dependencies and configs.
+
+Note that you can also set up an environment manually by following instructions in [README_fecore.md](README_fecore.md) and [SETUP.md](docs/SETUP.md). The provided `SETUP.sh` script can also be readily adapted to other Ubuntu 20.04 LTS installations.
 
 ## Evaluating RUNE
 
