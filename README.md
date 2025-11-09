@@ -10,7 +10,7 @@ The main README for the fecore/RUNE project can be found in [README_fecore.md](R
 The instructions and setup described in this document have been tested on Cloudlab c220g1 machines. 
 The fastest way to evaluate RUNE is to use our pre-built Cloudlab image:
 - You will need to register for an account at [Cloudlab](https://www.cloudlab.us)
-- Once you have registered, visit the profile page for our [RUNE-ae-mw25 Profile](https://www.cloudlab.us/p/fecore/RUNE-ae-mw25) 
+- Once you have registered, visit the profile page for our [RUNE-ae Profile](https://www.cloudlab.us/p/fecore/RUNE-ae) 
 - Select the `Instantiate` button
 - You can evaluate RUNE using a single node
 - Select a project to attach this experiment to (if you do not already have a project to use, one can be created by selecting your username in the top-right corner and then "Start/Join Project")
@@ -45,16 +45,12 @@ faas-cli -g 10.62.0.1:8081 deploy --image achgt/encrypt-p:latest --name encrypt-
 faas-cli -g 10.62.0.1:8081 deploy --image=encrypt-w --name encrypt-w --label ctrType=wasm
 faas-cli -g 10.62.0.1:8081 deploy --image hybrid --name encrypt-h --label ctrType=hybrid --label sandboxes=encrypt-n,encrypt-w
 
-faas-cli -g 10.62.0.1:8081 deploy --image achgt/imgrec-n:latest --name imgrec-n --label ctrType=native
-faas-cli -g 10.62.0.1:8081 deploy --image=imgrec-w --name imgrec-w --label ctrType=wasm
-faas-cli -g 10.62.0.1:8081 deploy --image hybrid --name imgrec-h --label ctrType=hybrid --label sandboxes=imgrec-n,imgrec-w
-
 faas-cli -g 10.62.0.1:8081 deploy --image achgt/compression-n:latest --name compression-n --label ctrType=native
 faas-cli -g 10.62.0.1:8081 deploy --image=compression-w --name compression-w --label ctrType=wasm
 faas-cli -g 10.62.0.1:8081 deploy --image hybrid --name compression-h --label ctrType=hybrid --label sandboxes=compression-n,compression-w
 ```
 
-The above commands will deploy Native, WASM, and Hybrid versions of three example functions described in the RUNE paper.
+The above commands will deploy Native, WASM, and Hybrid versions of three example functions described in the RUNE paper (*Thumbnailer*, *Encrypt*, and *Compression*). The Native versions are available as pre-built images via [DockerHub](https://hub.docker.com/u/achgt) and the pre-built WASM versions are included in the [latest release of RUNE](https://github.com/gt-epl/fecore/releases/download/RUNE-ae-v1.0/RUNE-ae-v1.0.tgz) under the `examples` directory.  
 
 You can test RUNE's hybrid container capability by invoking a hybrid function deployment via `curl`, e.g.: `curl -vk http://10.62.0.1:8081/function/compression-h`
 
